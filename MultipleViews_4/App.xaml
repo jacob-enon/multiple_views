@@ -1,0 +1,16 @@
+﻿<Application x:Class="MultipleViews_4.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:MultipleViews_4"
+             xmlns:viewmodel="clr-namespace:MultipleViews_4.ViewModel"
+             xmlns:view="clr-namespace:MultipleViews_4.View"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <DataTemplate DataType="{x:Type viewmodel:CustomerViewModel}">
+            <view:CustomerView DataContext="{Binding}"/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodel:EmployeeViewModel}">
+            <view:EmployeeView DataContext="{Binding}"/>
+        </DataTemplate>
+    </Application.Resources>
+</Application>
